@@ -64,11 +64,11 @@ sudo apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plug
 
 
 start all containers
-```
+```bash
 sudo docker compose up -d
 ```
 
 force recreate container
-```
+```bash
 sudo docker compose up --build --force-recreate --no-deps -d <container_name>
 ```

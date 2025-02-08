@@ -2,7 +2,7 @@
 
 open cli py sqlite3
 
-``` sqlite
+``` bash
 py -m sqlite3 .\tutorial.db
 ```
 
@@ -11,7 +11,7 @@ Querying the sqlite_master Table
 For more control, you can query the ‘sqlite_master’ table directly, which stores the metadata of the database, including table definitions.
 
 For example:
-```
+```sql
 SELECT name FROM sqlite_master WHERE type='table';
 ```
 
@@ -22,7 +22,7 @@ While ‘table_info’ does not list all the tables, it can be used alongside ta
 
 Example:
 
-```
+```sql
 PRAGMA table_info('actor');
 ```
 
