@@ -5,7 +5,6 @@
 - [git notes](#git-notes)
   - [Оглавление](#оглавление)
   - [global\_config](#global_config)
-  - [global\_config2](#global_config2)
 
 
 ## global_config
@@ -17,5 +16,3 @@ git config --global user.email d9067246810@gmail.com
 ``` bash
 git config --list
 ```
-
-## global_config2

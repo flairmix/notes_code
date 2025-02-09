@@ -7,6 +7,7 @@
     - [double round](#double-round)
     - [implicit conversion](#implicit-conversion)
     - [explicit conversion](#explicit-conversion)
+    - [explicitely / implicitely typed variable](#explicitely--implicitely-typed-variable)
 
 
 ### C# Hello World
@@ -53,4 +54,22 @@ float myFloat = 123.123f;
 double myDouble = 123.123123123123;
 myFloat = (float)myDouble;
 // it's wrong. myFloat cuts numbers after dot; 
+
+string myString = "123123";
+int myInt = int.Parse(myString);
+    
+string myBoolString = "true";
+bool myBool = Convert.ToBoolean(myBoolString);
+```
+
+### explicitely / implicitely typed variable 
+
+```C#
+//implicitely
+var myFavoriteGame = "gothic2";
+var myNumber = 12;
+
+//explicitely
+string myString = "text";
+int number = 12;
 ```
