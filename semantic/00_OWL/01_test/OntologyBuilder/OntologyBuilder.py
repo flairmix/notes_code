@@ -37,7 +37,7 @@ class OntologyBuilder:
         self.onto.save(file=filename, format="rdfxml")
 
     def visualize(self, filename="ontology.html"):
-        net = Network(width="1200px", height="800px", cdn_resources='in_line', notebook=False)
+        net = Network(width="1900px", height="920px", cdn_resources='in_line', notebook=False)
         net.barnes_hut(gravity=-7000, spring_length=30)
 
         # Adding classes
