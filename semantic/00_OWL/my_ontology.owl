@@ -1,0 +1,51 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/ontology"
+         xmlns="http://example.org/ontology#">
+
+<owl:Ontology rdf:about="http://example.org/ontology"/>
+
+<owl:ObjectProperty rdf:about="#studies">
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="#Course"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#proff">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="#Student"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Person">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Student">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Course">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#JohnDoe">
+  <rdf:type rdf:resource="#Student"/>
+  <rdf:type rdf:resource="#Person"/>
+  <studies rdf:resource="#Math101"/>
+  <proff rdf:resource="#JohnDoe"/>
+  <proff rdf:resource="#Math101"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#JohnDoe_1">
+  <rdf:type rdf:resource="#Person"/>
+  <studies rdf:resource="#Math101"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Math101">
+  <rdf:type rdf:resource="#Course"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>

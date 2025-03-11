@@ -1,0 +1,83 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/ontology"
+         xmlns="http://example.org/ontology#">
+
+<owl:Ontology rdf:about="http://example.org/ontology"/>
+
+<owl:ObjectProperty rdf:about="#studies">
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="#Course"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#teaches">
+  <rdfs:domain rdf:resource="#Teacher"/>
+  <rdfs:range rdf:resource="#Course"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#enrolled_at">
+  <rdfs:domain rdf:resource="#Student"/>
+  <rdfs:range rdf:resource="#University"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#works_at">
+  <rdfs:domain rdf:resource="#Teacher"/>
+  <rdfs:range rdf:resource="#University"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Person">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Student">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Teacher">
+  <rdfs:subClassOf rdf:resource="#Person"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Course">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#University">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Alice">
+  <rdf:type rdf:resource="#Student"/>
+  <studies rdf:resource="#Math101"/>
+  <enrolled_at rdf:resource="#UniXYZ"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Bob">
+  <rdf:type rdf:resource="#Student"/>
+  <studies rdf:resource="#Physics101"/>
+  <enrolled_at rdf:resource="#UniXYZ"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Dr_Smith">
+  <rdf:type rdf:resource="#Teacher"/>
+  <teaches rdf:resource="#Math101"/>
+  <teaches rdf:resource="#Physics101"/>
+  <works_at rdf:resource="#UniXYZ"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Math101">
+  <rdf:type rdf:resource="#Course"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Physics101">
+  <rdf:type rdf:resource="#Course"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#UniXYZ">
+  <rdf:type rdf:resource="#University"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
