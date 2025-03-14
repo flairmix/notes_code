@@ -1,0 +1,113 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Root>
+    <OKS KSI="1">
+        <Rule id="1">
+            <SubRule text="12.10 При проектировании насосных станций необходимо предусмотреть одно из обязательных условий:
+                а) из помещений первого или подвального этажа:
+                    - отдельный выход наружу;
+                    - выход на лестничную клетку или в холл (фойе), имеющих выход наружу;
+                б) из помещений любого этажа, кроме первого и подвального:
+                    - непосредственно на лестничную клетку или на лестницу 3-го типа;"
+                    subjeckForCheckID = "idSubject1"
+                    >
+
+                <Logic>
+                    <IF> 
+                        <CONDITION>
+                            <AND>
+                                <CHECK check_id="checkID_11" text="если существует Гидравлический насос противопожарной системы"> true </CHECK>
+                                <CHECK check_id="checkID_12" text="если Гидравлический насоc расположен в подземном этаже"> true </CHECK> 
+                                <CHECK check_id="checkID_15" text="если Гидравлический насоc расположен в Пространство для установок (технических систем) "> true </CHECK> 
+                            </AND>
+                        </CONDITION>
+                        <BODY text="определено помещение, где расположено насосное оборудование противопожарной системы">
+                        </BODY>
+                        <IF>
+                            <CONDITION>
+                                <AND> 
+                                    <CHECK check_id="checkID_01" text="если существует объект доступа"> true </CHECK>
+                                    <CHECK check_id="checkID_2" text="если он Эвакуационный выход"> true </CHECK>
+                                    <CHECK check_id="checkID_8" text="если он принадлежит помещению, где расположен насос"> true </CHECK>
+                                </AND>
+                           </CONDITION>
+                            <IF>
+                                <CONDITION>
+                                    <IF> <CHECK check_id="checkID_5" text="Тип эвакуационного выхода Непосредственно наружу"> Непосредственно наружу </CHECK> </IF> 
+                                    <ELSE> Проверка не выполнена - не пройдена проверка checkID_5 </ELSE> 
+                                </CONDITION>
+                            </IF>               
+                        </IF>
+                    </IF>
+                    <ELSE>
+                        <RETURN>
+                            Проверка не выполнена - не найдены объекты проверки 
+                        </RETURN>
+                    </ELSE>
+                </Logic>
+                
+                <Subjects number="2">
+
+                    <Subject id="idSubject1" type="single-level">
+                    <FunctionalSystem >
+                        <TechnicalSystem >
+                            <ComponentType KSI="QQ" name="объект доступа к пространству">
+                                <Variable name="RoomWhereComponent_1"> Room_1 </Variable>
+                                <Checks>
+                                    <Existing>
+                                        <CheckExisting id="checkID_01" isCheking="true"> true </CheckExisting>
+                                    </Existing>
+                                    <Propertys>
+                                        <Property KSI="CFQQ0003" name="Эвакуационный выход">
+                                            <CheckExisting id="checkID_1" isCheking="true"> true </CheckExisting>
+                                            <CheckValue id="checkID_2" isCheking="true"> true </CheckValue>
+                                            <CheckUnits id="checkID_3" isCheking="false"> </CheckUnits>
+                                        </Property>
+                                        <Property KSI="----" name="Тип эвакуационного выхода">
+                                            <CheckExisting id="checkID_4" isCheking="true"> true </CheckExisting>
+                                            <CheckValue id="checkID_5" isCheking="true"> Непосредственно наружу </CheckValue>
+                                            <CheckUnits id="checkID_6" isCheking="false"> </CheckUnits>
+                                        </Property>
+                                    </Propertys>
+                                    <Location>
+                                        <Property KSI="XNKL0001" name="КСИ Место расположения">
+                                            <CheckExisting id="checkID_7" isCheking="true"> true </CheckExisting>
+                                            <CheckValue id="checkID_8" isCheking="true" condition = "Contains" type="variable"> RoomWhereComponent_1 </CheckValue>
+                                        </Property>
+                                    </Location>
+                                </Checks>
+                            </ComponentType>
+                        </TechnicalSystem>
+                    </FunctionalSystem>
+                    </Subject>
+
+                    <Subject id="idSubject2" type="multy_level">
+                    <FunctionalSystem KSI="P10" name="Система противопожарной защиты">
+                        <TechnicalSystem KSI="PB20" name="Внутренний противопожарный водопровод">
+                            <ComponentType KSI="GPB" name="Гидравлический насос">
+                                <Variable name="RoomWhereComponent_2"> Room_2 </Variable>
+                                <Checks>
+                                    <Existing>
+                                        <CheckExisting id="checkID_11" isCheking="true"> true </CheckExisting>
+                                    </Existing>
+                                    <Propertys>
+                                    ...
+                                    </Propertys>
+                                    <Location>
+                                        <Property KSI="XNKL0001" name="КСИ Место расположения">
+                                            <CheckValue id="checkID_12" isCheking="true" condition = "Contains"> SAC </CheckValue>
+                                            <CheckValue id="checkID_13" isCheking="true" condition = "Equal"> SAB010 </CheckValue>
+                                            <CheckValue id="checkID_14" isCheking="true" condition = "Contain"> SA </CheckValue>
+                                            <CheckValue id="checkID_15" isCheking="true" condition = "Contain"> DAC </CheckValue>
+                                        </Property>
+                                    </Location>
+                                </Checks>
+                            </ComponentType>
+                        </TechnicalSystem>
+                    </FunctionalSystem>
+                    </Subject>
+
+                </Subjects>
+            </SubRule>
+        </Rule>
+    </OKS>
+</Root>

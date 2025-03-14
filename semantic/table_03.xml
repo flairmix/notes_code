@@ -1,0 +1,76 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Root>
+    <OKS KSI="1">
+        <Rule id="1">
+            <SubRule text="Уклон наружных открытых лестниц, используемых для эвакуации, в зданиях детских дошкольных учреждений должен составлять не более 45гр. 
+                Ширину указанных лестниц допускается выполнять  не менее 800мм."
+                subjeckForCheckID = "idSubject1"
+                >
+
+                <Logic>
+                    <IF> 
+                        <CONDITION>
+                            <AND>
+                                <CHECK check_id="checkID_01" text="если существует Лестница"> true </CHECK>
+                                <CHECK check_id="checkID_02" text="если Лестница типа  3-й тип - наружные открытые"> true </CHECK>
+                            </AND>
+                        </CONDITION>
+                        <IF_ELSE>
+                            <IF>
+                                <COMPARE>
+                                    <LOWER>
+                                        <CHECK check_id="checkID_03" text="Уклон марша менее или равно 45"> true </CHECK>
+                                    </LOWER>
+                                </COMPARE>
+                                <RETURN> Условие проверки checkID_03 выполнено </RETURN>
+                            </IF>
+                            <ELSE> Условие проверки checkID_03 не выполнено </ELSE>
+                        </IF_ELSE>
+                        <IF_ELSE>
+                            <IF>
+                                <COMPARE>
+                                    <BIGGER>
+                                        <CHECK check_id="checkID_04" text="Ширина лестничного марша более или равно 800мм"> true </CHECK>
+                                    </BIGGER>
+                                </COMPARE>
+                                <RETURN> Условие проверки checkID_04 выполнено </RETURN>
+                            </IF>
+                            <ELSE> Условие проверки checkID_04 не выполнено </ELSE>
+                        </IF_ELSE>
+                    </IF>
+                 </Logic> 
+
+                <Subjects number="1">
+
+                <Subject id="idSubject1" type="single-level">
+                <FunctionalSystem>
+                    <TechnicalSystem >
+                        <ComponentType KSI="XSC" name="Лестница">
+                            <Checks>
+                                <Existing>
+                                    <CheckExisting id="checkID_01"> true </CheckExisting>
+                                </Existing>
+                                <Propertys>
+                                    <Property KSI="CFXS0003" name="КСИ Тип лестницы, предназначенной для эвакуации людей из зданий и сооружений при пожаре">
+                                        <CheckValue id="checkID_02"> 3-й тип - наружные открытые </CheckValue>
+                                    </Property>
+                                    <Property KSI="CPG_0024" name="КСИ Уклон марша">
+                                        <CheckValue id="checkID_03"> 45 </CheckValue>
+                                    </Property>
+                                    <Property KSI="CPG_0027" name="КСИ Ширина лестничного марша ">
+                                        <CheckValue id="checkID_04"> 800 </CheckValue>
+                                    </Property>
+                                </Propertys>
+                                <Location>
+                                ...
+                                </Location>
+                            </Checks>
+                        </ComponentType>
+                    </TechnicalSystem>
+                </FunctionalSystem>
+                </Subject>
+                </Subjects>
+            </SubRule>
+        </Rule>
+    </OKS>
+</Root>

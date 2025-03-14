@@ -1,0 +1,35 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Root>
+    <OKS KSI="1">
+        <Rule id="1">
+            <SubRule text="12.5 Пожарные насосы ВПВ следует относить ко II категории 
+                по степени обеспеченности подачи воды в соответствии с СП 8.13130 и к I категории надежности электроснабжения">
+                <Subject type="multy_level">
+                <FunctionalSystem KSI="P10" name="Система противопожарной защиты">
+                    <TechnicalSystem KSI="PB20" name="Внутренний противопожарный водопровод">
+                        <ComponentType KSI="GPB" name="Гидравлический насос">
+                            <Checks>
+                                <Propertys>
+                                    <Property KSI="BPE_0003" name="КСИ Категория электроприемника">
+                                        <CheckExisting isCheking="true"> true </CheckExisting>
+                                        <CheckValue isCheking="true"> 1 </CheckValue>
+                                        <CheckUnits isCheking="false"> </CheckUnits>
+                                    </Property>
+                                    <Property KSI="BPE_---" name="КСИ Cтепень обеспеченности подачи воды">
+                                        <CheckExisting isCheking="true"> true </CheckExisting>
+                                        <CheckValue isCheking="true"> 2 </CheckValue>
+                                        <CheckUnits isCheking="false"> </CheckUnits>
+                                    </Property>
+                                </Propertys>
+                                <Location>
+                                ...
+                                </Location>
+                            </Checks>
+                        </ComponentType>
+                    </TechnicalSystem>
+                </FunctionalSystem>
+                </Subject>
+            </SubRule>
+        </Rule>
+    </OKS>
+</Root>
