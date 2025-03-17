@@ -1,0 +1,82 @@
+<?xml version='1.0' encoding='utf-8'?>
+<Root>
+    <OKS KSI="1">
+        <Rule id="1" text="Ширину полотна входной двери в квартиру следует принимать не менее 0,9 м. 
+                Ширину дверного проема санитарно-гигиенических помещений, межкомнатных и балконных дверей следует принимать не менее 0,80 м.">
+            <SubRule id="1" text="Ширину полотна входной двери в квартиру следует принимать не менее 0,9 м."
+                subjeckForCheckID = "idSubject1">
+
+                <Logic>
+                    <IF> 
+                        <CONDITION>
+                            <AND>
+                                <CHECK check_id="checkID_01" text="если существует Лестница"> true </CHECK>
+                                <CHECK check_id="checkID_02" text="если Лестница типа  3-й тип - наружные открытые"> true </CHECK>
+                            </AND>
+                        </CONDITION>
+                        <IF_ELSE>
+                            <IF>
+                                <COMPARE>
+                                    <LOWER>
+                                        <CHECK check_id="checkID_03" text="Уклон марша менее или равно 45"> true </CHECK>
+                                    </LOWER>
+                                </COMPARE>
+                                <RETURN> Условие проверки checkID_03 выполнено </RETURN>
+                            </IF>
+                            <ELSE> Условие проверки checkID_03 не выполнено </ELSE>
+                        </IF_ELSE>
+                        <IF_ELSE>
+                            <IF>
+                                <COMPARE>
+                                    <BIGGER>
+                                        <CHECK check_id="checkID_04" text="Ширина лестничного марша более или равно 800мм"> true </CHECK>
+                                    </BIGGER>
+                                </COMPARE>
+                                <RETURN> Условие проверки checkID_04 выполнено </RETURN>
+                            </IF>
+                            <ELSE> Условие проверки checkID_04 не выполнено </ELSE>
+                        </IF_ELSE>
+                    </IF>
+                 </Logic> 
+
+                <Subjects number="1">
+
+                <Subject id="idSubject1" type="single-level">
+                <FunctionalSystem>
+                    <TechnicalSystem >
+                        <ComponentType KSI="QQC" name="Дверь">
+                            <Checks>
+                                <Propertys></Propertys>
+                                <Location>
+                                    <CheckLocation> 
+                                        <CheckLocation id="checkID_01" type="inside"> 0.8 </CheckLocation>
+                                    </CheckLocation>
+                                </Location>
+                            </Checks>
+
+
+                            <SubComponent id="1" KSI="NBA" name="Дверное полотно">
+                                <Checks>
+                                    <Propertys>
+                                        <Property KSI="XPG0001" name="Ширина">
+                                            <CheckValueEqualOrMore id="checkID_02" units="м."> 0.8 </CheckValueEqualOrMore>
+                                        </Property>
+                                    </Propertys>
+                                    <Location>
+                                        <CheckLocation> 
+                                        </CheckLocation>
+                                    </Location>
+                                </Checks>
+                            
+                            
+                            </SubComponent>
+
+                        </ComponentType>
+                    </TechnicalSystem>
+                </FunctionalSystem>
+                </Subject>
+                </Subjects>
+            </SubRule>
+        </Rule>
+    </OKS>
+</Root>
