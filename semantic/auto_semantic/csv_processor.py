@@ -11,7 +11,7 @@ class CSVProcessor:
         self.output_csv_path = output_csv_path
         
         self.base_cols = [
-            "l",
+            "ID",
             "Содержание",
             "Дата ввода требования в действие",
             "Реестр НТД",
@@ -60,25 +60,38 @@ class CSVProcessor:
             return False
         return bool(re.search(pattern, text, flags=re.IGNORECASE))
     
-    def get_pattern_text(self, text: str, pattern: str) -> str:
+    def get_pattern_text(self, text: str, pattern: str) -> list[str]:
         """Проверяет, содержит ли текст заданный паттерн (регулярное выражение)."""
         if not isinstance(text, str):
             return None
-        match = re.search(pattern, text, flags=re.IGNORECASE)
-        return match.group(0) if match else None
+        match = re.findall(pattern, text, flags=re.IGNORECASE) #TODO искать все и возвращать
+        return match if len(match)>0 else None
     
     # patterns for classifying 
     def check_conditions(self):
         """Проверяет условия для каждой строки и обновляет DataFrame."""
-        zadanie_pattern = r"задан\w*\s+на\s+проектирован\w*"
+        pattern_design_assignment = [
+             r"задан\w*\s+на\s+проектирован\w*",
+             r"техническ\w*\s+задани\w*",
+             r"\bтехнологич\w*\s+требован\w*\b",
+            #  r'\bпо технологическим требованиям\b',
+        ]
         SP_pattern = r"СП \d*+."
+        SP_pattern_1 = r"СП\d*+."
         GOST_pattern = r"ГОСТ \d*+."
         SanPin_pattern = r"СанПиН \d*+."
         bibliografy_pattern = r"\[\d+\]"
         table_pattern = r"<table "
-        calculation_pattern = r"<определяется расчетом "
+        
+        pattern_link_external = [
+            r'\bуказан\w*\sв\s\d+\.\d+\b',
+            r'\bв соответствии с требованиями раздела \d+(\.\d+)?\b',
+            r'\bв соответствии с (?:требованиями )?раздел[а-я]* \d+(?:\.\d+)?(?:\s*(?:и|,)\s*\d+(?:\.\d+)?)*\b',
+        ]
 
         calculation_list_pattern = [
+            r"определяе\w*\s*расчет\w*",
+            r"рассчитанн\w*\s*в\s*соответст\w*\s*c",
             r"\b(определя[ею]т(?:ся)?|рассчитыва[ею]т(?:ся)?)\s+(на\s+основани[иея]|по\s+результат[уыам]|из|в\s+ходе)?\s*расчет[аоуы]?\b",
             r"\bпринима[ею]т(?:ся)?\s+(по|из)?\s*расчет[ауо]?\b",
             r"\bс\s+результат[ауыами]?\s+расчет[ауо]?\b",
@@ -93,36 +106,58 @@ class CSVProcessor:
             r"\bрассчитанн(?:ую|ый|ое|ые|ым|ом)\s+на\b",
         ]
 
-        not_ordinary_patterns = [r"\b(должн(?:а|о|ы)?|следует|рекомендуется|допускается|может)\s+(быть\s+)?(использован(?:о|а|ы)?|применен(?:о|а|ы)?|учт(?:ен|ена|ено|ены)?|рассмотрен(?:о|а|ы)?|выбран(?:о|а|ы)?)\b",
-            r"\b(достаточн(?:о|ая|ые|ым|ых|ого)|адекватн(?:о|ая|ые|ым|ых|ого)|целесообразн(?:о|ая|ые|ым|ых|ого)|эффективн(?:о|ая|ые|ым|ых|ого))\b",
-            r"\b(примерно|в\s+пределах|не\s+менее|не\s+более|до\s+\d+%?|от\s+\d+%?|в\s+диапазоне|может\s+составлять)\b",
-            r"\b(должны\s+быть|могут\s+быть|могут\s+использоваться|следует\s+предусматривать|может\s+приниматься|рекомендуется\s+применение)\b",
-            r"\b(разумн(?:ый|ая|ое|ые)|достаточн(?:ый|ая|ое|ые)|следует\s+учитывать|допускается\s+изменение|может\s+быть\s+принято)\b",
+        not_ordinary_patterns = [
+            r"рекомендуе\w*",
+            r'(?<!\bне )\bдопускает\w*\b',
+            r"примерно\w*",
+            r"разумн\w*",
+            r" должн\w*\s*соответство\w*\s*требовани\w*\s*норматив\w*\s* докумен\w*",
+            r'\b(?:др\.|т\.п\.|т\.д\.)',
+            r'\bВ случае отсутствия информации\b', r'\bпри отсутствии информации\b',
+
+
         ]
         
         for i, row in self.df.iterrows():
-            if self.has_pattern(row["Содержание"], zadanie_pattern):
-                self.df.at[i, "Наличие ссылок на Задание на проектирование"] = 1
 
+            for pattern in pattern_design_assignment:
+                match = self.has_pattern(row["Содержание"], pattern=pattern)
+                if match:
+                    self.df.at[i, "Наличие ссылок на Задание на проектирование"] = 1
+                    self.df.at[i, "Комментарии"] += "Наличие ссылок на Задание на проектирование\n"
+
+            for pattern in pattern_link_external:
+                match = self.has_pattern(row["Содержание"], pattern=pattern)
+                if match:
+                    self.df.at[i, "Наличие ссылок на другие пункы этого СП"] = 1
+                    self.df.at[i, "Комментарии"] += "Наличие ссылок на другие пункы этого СП\n"
+                    break
+                    
             if (self.has_pattern(row["Содержание"], SP_pattern) or
+                self.has_pattern(row["Содержание"], SP_pattern_1) or
                 self.has_pattern(row["Содержание"], GOST_pattern) or
                 self.has_pattern(row["Содержание"], SanPin_pattern) or
                 self.has_pattern(row["Содержание"], bibliografy_pattern)):
                 
                 self.df.at[i, "Наличие ссылок на другие НД, в которых содержатся требования"] = 1
+                self.df.at[i, "Комментарии"] += "Наличие ссылок на другие НД, в которых содержатся требования\n"
 
             if self.has_pattern(row["Содержание"], table_pattern):
                 self.df.at[i, "Наличие таблиц"] = 1
+                self.df.at[i, "Комментарии"] += "Наличие таблиц\n"
 
             for pattern in calculation_list_pattern:
-                if self.has_pattern(row["Содержание"], pattern=pattern):
+                match = self.get_pattern_text(row["Содержание"], pattern=pattern)
+                if match:
                     self.df.at[i, "Упоминание расчетов"] = 1
+                    self.df.at[i, "Комментарии"] += f"Упоминание расчетов {match} \n"
                     break
 
             for pattern in not_ordinary_patterns:
-                if self.get_pattern_text(row["Содержание"], pattern=pattern):
-                    self.df.at[i, "Комментарии"] = 1
-                    break
+                match = self.get_pattern_text(row["Содержание"], pattern=pattern)
+                if match:
+                    self.df.at[i, "Комментарии"] += f"Неоднозначная формулировка {match}\n"
+                
 
 
     
