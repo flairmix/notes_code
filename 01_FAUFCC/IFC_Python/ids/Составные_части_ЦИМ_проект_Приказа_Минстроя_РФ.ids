@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ids xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd" xmlns="http://standards.buildingsmart.org/IDS">
+  <info>
+    <title>Составные части ЦИМ. Проект приказа Минстроя РФ</title>
+    <copyright>Отдел ТИМ, СПб ГАУ "ЦГЭ"</copyright>
+    <version>0.1 (проект)</version>
+    <description>ВНИМАНИЕ! Данные требования к составным частям актуальны при представлении ЦИМ в виде единого файла.
+1.	Цифровая информационная модель, дополняющая графическую часть сведений, документов и материалов, входящих в состав разделов проектной документации на этапе архитектурно-строительного проектирования (далее – ЦИМ) объекта капитального строительства (за исключением линейных объектов), содержит следующие составные части, соответствующие разделам проектной документации, предусмотренным Положением о составе разделов проектной документации и требованиях к их содержанию, утвержденным постановлением Правительства Российской Федерации от 16 февраля 2008 г. № 87  (далее – Положение № 87): 
+а)	«Объемно-планировочные и архитектурные решения»;
+б)	«Конструктивные решения»;
+в)	«Система водоснабжения»;
+г)	«Система водоотведения»;
+д)	«Отопление, вентиляция и кондиционирование воздуха, тепловые сети».</description>
+    <author>bim@spbexp.ru</author>
+    <date>2025-04-01</date>
+    <purpose>Валидация составных частей ЦИМ согласно таблице 1 проекта приказа Министерства строительства и жилищно-коммунального хозяйства Российской Федерации "Об утверждении Состава цифровой информационной модели, дополняющей графическую часть сведений, документов и материалов, входящих в состав разделов проектной документации на этапе архитектурно-строительного проектирования". </purpose>
+    <milestone>Проектирование</milestone>
+  </info>
+  <specifications>
+    <specification name="Требования к составным частям АР, КР" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1" description="ВНИМАНИЕ! Данные требования к составным частям актуальны при представлении ЦИМ в виде единого файла." instructions="Допускается дополнительное деление здания на системы. Часть &quot;Конструктивные решения&quot; может быть разделена на следующие виды:&#xA;- Система фундамента (IfcBuildingSystem.FOUNDATION);&#xA;- Система несущих конструкций (IfcBuildingSystem.LOADBEARING).&#xA;&#xA;Часть &quot;Объемно-планировочные и архитектурные решения&quot; может быть разделена на следующие виды:&#xA;- Cистема остекления (IfcBuildingSystem.FENESTRATION);&#xA;- Фасадная система (IfcBuildingSystem.OUTERSHELL);&#xA;- Солцезащитная система (IfcBuildingSystem.SHADING);&#xA;- Система транспорта(IfcBuildingSystem.TRANSPORT).">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="IFCBUILDINGSYSTEM" />
+              <xs:enumeration value="IFCBUILTSYSTEM" />
+            </xs:restriction>
+          </name>
+          <predefinedType>
+            <simpleValue>USERDEFINED</simpleValue>
+          </predefinedType>
+        </entity>
+      </applicability>
+      <requirements>
+        <attribute cardinality="required">
+          <name>
+            <simpleValue>ObjectType</simpleValue>
+          </name>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объемно-планировочные и архитектурные решения" />
+              <xs:enumeration value="Конструктивные решения" />
+            </xs:restriction>
+          </value>
+        </attribute>
+      </requirements>
+    </specification>
+    <specification name="Требования к составным частям ВК, ОВК, ТС" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1" description="ВНИМАНИЕ! Данные требования к составным частям актуальны при представлении ЦИМ в виде единого файла." instructions="Допускается дополнительное деление инженерных систем. Например, система водоснабжения может быть разделена на следующие виды:&#xA;- Водоснабжение бытовое холодное (В1) (IfcDistributionSystem.DOMESTICCOLDWATER);&#xA;- Водоснабжение бытовое горячее (Т3, Т4) (IfcDistributionSystem.DOMESTICHOTWATER);&#xA;- Водопровод противопожарный, спринклерное пожаротушение (В2) (IfcDistributionSystem.FIREPROTECTION);&#xA;- Водопровод производственный, технический (В3) (IfcDistributionSystem.CHILLEDWATER).">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCDISTRIBUTIONSYSTEM</simpleValue>
+          </name>
+          <predefinedType>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="USERDEFINED" />
+            </xs:restriction>
+          </predefinedType>
+        </entity>
+      </applicability>
+      <requirements>
+        <attribute cardinality="required">
+          <name>
+            <simpleValue>ObjectType</simpleValue>
+          </name>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Система водоснабжения" />
+              <xs:enumeration value="Система водоотведения" />
+              <xs:enumeration value="Отопление, вентиляция и кондиционирование воздуха, тепловые сети" />
+            </xs:restriction>
+          </value>
+        </attribute>
+      </requirements>
+    </specification>
+  </specifications>
+</ids>
