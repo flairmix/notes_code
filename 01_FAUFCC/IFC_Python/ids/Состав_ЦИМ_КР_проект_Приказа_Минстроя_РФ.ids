@@ -1,0 +1,1786 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ids xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://standards.buildingsmart.org/IDS http://standards.buildingsmart.org/IDS/1.0/ids.xsd" xmlns="http://standards.buildingsmart.org/IDS">
+  <info>
+    <title>Состав ЦИМ КР. Проект приказа Минстроя РФ</title>
+    <copyright>Отдел ТИМ, СПб ГАУ "ЦГЭ"</copyright>
+    <version>0.1 (проект)</version>
+    <description>Состав цифровой информационной модели, дополняющей графическую часть сведений, документов и материалов, входящих в состав разделов проектной документации на этапе архитектурно-строительного проектирования. 
+Типы данных приняты в соответствии с ГОСТ Р 10.0.02-2019. Список соотнесения типов данных с требованиями настоящего проекта приказа ниже: 
+мм/ и м/ вещественный - IfcLengthMeasure
+м3/ вещественный - IfcVolumeMeasure
+кг или т/ вещественный - IfcMassMeasure
+м2/ вещественный - IfcAreaMeasure
+-/ текстовый - Ifclabel (или IfcText для длинного текста)
+˚ или ‰/ вещественный - IfcPlaneAngleMeasure
+логический (да/нет) - IfcBoolean
+угол, ˚ и (или) ՛ и (или) ՛՛/ вещественный - IfcPlaneAngleMeasure</description>
+    <author>bim@spbexp.ru</author>
+    <date>2025-04-01</date>
+    <purpose>Валидация состава атрибутов и наборов атрибутов для элементов цифровой информационной модели согласно проекту приказа Министерства строительства и жилищно-коммунального хозяйства Российской Федерации "Об утверждении Состава цифровой информационной модели, дополняющей графическую часть сведений, документов и материалов, входящих в состав разделов проектной документации на этапе архитектурно-строительного проектирования".
+КОНСТРУКТИВНЫЕ РЕШЕНИЯ</purpose>
+    <milestone>Проектирование</milestone>
+  </info>
+  <specifications>
+    <specification name="Требования к элементу &quot;Фундамент&quot; (вариант 1)" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." description="Вариант предполагает, что все элементы, сгруппированные в систему фундамента (IfcBuildingSystem.FOUNDATION), должны/могут иметь перечисленные атрибуты. " instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <partOf relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>FOUNDATION</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="optional" instructions="В случае переменной высоты указывается максимальная высота элемента." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Высота</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается объем элемента с учетом всех выступающих или вырезанных элементов." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается толщина фундаментной плиты или общая высота сборного фундамента." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Толщина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается площадь подошвы фундамента." dataType="IFCAREAMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Площадь</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Фундамент&quot; (вариант 2)" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." description="Вариант предполагает, что фасад является самостоятельным элементом (IfcFooting)" instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCFOOTING</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="optional" instructions="В случае переменной высоты указывается максимальная высота элемента." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Высота</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается объем элемента с учетом всех выступающих или вырезанных элементов." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается толщина фундаментной плиты или общая высота сборного фундамента." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Толщина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается площадь подошвы фундамента." dataType="IFCAREAMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Площадь</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Свая&quot;" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCPILE</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="required" instructions="Указывается объем элемента с учетом всех выступающих или вырезанных элементов до срубки." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Длина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается диаметр сваи (если применимо)." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Диаметр</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Плита / перекрытие&quot;" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCSLAB</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="required" instructions="Указывается объем элемента за вычетом всех проемов и отверстий." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается толщина элемента. В случае переменной толщины указывается минимальная толщина." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Толщина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если элемент не привязан к элементу этажа (IfcBuildingStorey)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Этаж</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Стена (несущая)&quot;" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCWALL</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="required" instructions="В случае переменной высоты указывается максимальная высота элемента." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Высота</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается объем элемента с учетом всех выступающих или вырезанных элементов." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Длина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="В случае переменной толщины указывается минимальная толщина." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Толщина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается площадь поверхности стены." dataType="IFCAREAMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Площадь</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если элемент не привязан к элементу этажа (IfcBuildingStorey)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Этаж</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Колонна&quot;" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCCOLUMN</simpleValue>
+          </name>
+          <predefinedType>
+            <simpleValue>COLUMN</simpleValue>
+          </predefinedType>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="required" instructions="Указывается конструктивная высота колонны." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Высота</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается объем элемента." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается опционально, в случае колонны круглого сечения." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Диаметр</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Ширина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если элемент не привязан к элементу этажа (IfcBuildingStorey)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Этаж</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Балка&quot;" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCBEAM</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="required" instructions="Указывается высота сечения. В случае переменного сечения указывается наименьшая высота." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Высота</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается объем элемента с учетом всех выступающих или вырезанных элементов." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Длина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается ширина сечения. В случае переменного сечения указывается наименьшая ширина." dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Ширина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если элемент не привязан к элементу этажа (IfcBuildingStorey)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Этаж</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Лестница&quot;" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCSTAIR</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="required" instructions="Указывается объем элемента с учетом всех выступающих или вырезанных элементов." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Ширина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если элемент не привязан к элементу этажа (IfcBuildingStorey)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Этаж</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Лестничный марш&quot;" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCSTAIRFLIGHT</simpleValue>
+          </name>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="required" instructions="Указывается объем элемента с учетом всех выступающих или вырезанных элементов." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Ширина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если элемент не привязан к элементу этажа (IfcBuildingStorey)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Этаж</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Пандус&quot;" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCRAMP</simpleValue>
+          </name>
+          <predefinedType>
+            <simpleValue>Пандус</simpleValue>
+          </predefinedType>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="required" instructions="Указывается объем элемента с учетом всех выступающих или вырезанных элементов." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Ширина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если элемент не привязан к элементу этажа (IfcBuildingStorey)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Этаж</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+    <specification name="Требования к элементу &quot;Рампа&quot;" ifcVersion="IFC4 IFC4X3_ADD2" identifier="Таблица 1." instructions="6. Атрибутивные данные в составе наборов данных, указанных в пункте 5 настоящего Состава, включаются в элемент в зависимости от геометрических характеристик элемента, назначения и функционально-технологических особенностей объекта капитального строительства, уточненный перечень атрибутивных данных, включаемых в соответствующий элемент, определяется в задании на проектирование и (или) техническом задании на цифровую информационную модель.">
+      <applicability minOccurs="1" maxOccurs="unbounded">
+        <entity>
+          <name>
+            <simpleValue>IFCRAMP</simpleValue>
+          </name>
+          <predefinedType>
+            <simpleValue>Рампа</simpleValue>
+          </predefinedType>
+        </entity>
+      </applicability>
+      <requirements>
+        <partOf cardinality="required" instructions="Соблюдение требования необходимо в случае представления ЦИМ в виде единого файла. Оно определяет, что элемент, относящийся к &quot;Конструктивным решениям&quot;, должен быть в составе соответствующей системы." relation="IFCRELASSIGNSTOGROUP">
+          <entity>
+            <name>
+              <xs:restriction base="xs:string">
+                <xs:enumeration value="IFCBUILDINGSYSTEM" />
+                <xs:enumeration value="IFCBUILTSYSTEM" />
+              </xs:restriction>
+            </name>
+            <predefinedType>
+              <simpleValue>Конструктивные решения</simpleValue>
+            </predefinedType>
+          </entity>
+        </partOf>
+        <property cardinality="required" instructions="Указывается объем элемента с учетом всех выступающих или вырезанных элементов." dataType="IFCVOLUMEMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <xs:restriction base="xs:string">
+              <xs:enumeration value="Объем" />
+              <xs:enumeration value="Объём" />
+            </xs:restriction>
+          </baseName>
+        </property>
+        <property cardinality="optional" dataType="IFCMASSMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Масса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCLENGTHMEASURE">
+          <propertySet>
+            <simpleValue>Геометрические данные</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Ширина</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС имеет 2 и более корпусов." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер корпуса</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если ОКС разделен на секции." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Номер секции</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Указывается, если элемент не привязан к элементу этажа (IfcBuildingStorey)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные о местоположении</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Этаж</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Наименование</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="optional" dataType="IFCTEXT">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Описание</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="optional" instructions="Код в составе данных маркировки элемента определяется и включается в элемент согласно «Классификатору строительной информации» единой информационной системы «Стройкомплекс.РФ» (далее - КСИ) в объеме, закрепленном соответствующей XML-схемой. До введения в действие соответствующей XML-схемы код элемента включается в объеме, позволяющем описывать элемент не менее чем по одной классификационной таблице КСИ (допускается использовать составной код по нескольким таблицам), при этом количество символов кода должно соответствовать количеству символов в графе «Подкласс 2» таблиц КСИ или быть больше. Если таблицы КСИ не содержат графу «Подкласс 2», количество символов кода определяется в соответствии с заданием на проектирование и (или) техническим заданием на цифровую информационную модель." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Код материала</simpleValue>
+          </baseName>
+          <value>
+            <xs:restriction base="xs:string">
+              <xs:pattern value="^[A-HJ-NP-Z]{3,4}$" />
+            </xs:restriction>
+          </value>
+        </property>
+        <property cardinality="required" instructions="Указывается основной несущий материал элемента." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Материал</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается стандарт или технические условия, в соответствии с которым изготавливается элемент. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Обозначение нормативно-технического документа</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" instructions="Указывается номер позиции (марки) элемента. Если не применимо, указывается знак «-» (прочерк)." dataType="IFCLABEL">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Марка</simpleValue>
+          </baseName>
+        </property>
+        <property cardinality="required" dataType="IFCBOOLEAN">
+          <propertySet>
+            <simpleValue>Данные маркировки</simpleValue>
+          </propertySet>
+          <baseName>
+            <simpleValue>Признак несущей конструкции</simpleValue>
+          </baseName>
+          <value>
+            <simpleValue>true</simpleValue>
+          </value>
+        </property>
+      </requirements>
+    </specification>
+  </specifications>
+</ids>

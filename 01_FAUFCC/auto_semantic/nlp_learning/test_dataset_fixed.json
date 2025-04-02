@@ -1,0 +1,2652 @@
+[
+    {
+        "text": "По требованиям ГОСТ 30494 давление для масло следует поддерживать 100.0 м³/ч.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 34,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 45,
+                "end": 65,
+                "label": "ACTION"
+            },
+            {
+                "start": 66,
+                "end": 71,
+                "label": "VALUE"
+            },
+            {
+                "start": 72,
+                "end": 76,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СП 60.13330 температура для вода не должно превышать 34.5 °C.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 38,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 48,
+                "end": 67,
+                "label": "ACTION"
+            },
+            {
+                "start": 68,
+                "end": 72,
+                "label": "VALUE"
+            },
+            {
+                "start": 73,
+                "end": 75,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям ГОСТ 30494 высота для азот не должно превышать 70.2 МПа.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 32,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 42,
+                "end": 61,
+                "label": "ACTION"
+            },
+            {
+                "start": 62,
+                "end": 66,
+                "label": "VALUE"
+            },
+            {
+                "start": 67,
+                "end": 70,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Система теплообменник следует поддерживать концентрация на уровне 79.8 бар в цех.",
+        "entities": [
+            {
+                "start": 43,
+                "end": 55,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 66,
+                "end": 70,
+                "label": "VALUE"
+            },
+            {
+                "start": 71,
+                "end": 74,
+                "label": "UNIT"
+            },
+            {
+                "start": 77,
+                "end": 80,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Трубопровод должен поддерживать высота 52.0 бар при работе с масло.",
+        "entities": [
+            {
+                "start": 32,
+                "end": 38,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 39,
+                "end": 43,
+                "label": "VALUE"
+            },
+            {
+                "start": 44,
+                "end": 47,
+                "label": "UNIT"
+            },
+            {
+                "start": 61,
+                "end": 66,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Высота в трубопровод не должно превышать 82.4 бар согласно СП 60.13330.",
+        "entities": [
+            {
+                "start": 9,
+                "end": 20,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 21,
+                "end": 40,
+                "label": "ACTION"
+            },
+            {
+                "start": 41,
+                "end": 45,
+                "label": "VALUE"
+            },
+            {
+                "start": 46,
+                "end": 49,
+                "label": "UNIT"
+            },
+            {
+                "start": 59,
+                "end": 70,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Насос должен поддерживать температура 32.8 г/м³ при работе с масло.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 37,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 38,
+                "end": 42,
+                "label": "VALUE"
+            },
+            {
+                "start": 43,
+                "end": 47,
+                "label": "UNIT"
+            },
+            {
+                "start": 61,
+                "end": 66,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Давление в теплообменник должно обеспечивать 80.2 °C согласно ГОСТ Р 12.3.047.",
+        "entities": [
+            {
+                "start": 11,
+                "end": 24,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 25,
+                "end": 44,
+                "label": "ACTION"
+            },
+            {
+                "start": 45,
+                "end": 49,
+                "label": "VALUE"
+            },
+            {
+                "start": 50,
+                "end": 52,
+                "label": "UNIT"
+            },
+            {
+                "start": 62,
+                "end": 77,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Система трубопровод должно обеспечивать давление на уровне 36.7 °C в цех.",
+        "entities": [
+            {
+                "start": 40,
+                "end": 48,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 59,
+                "end": 63,
+                "label": "VALUE"
+            },
+            {
+                "start": 64,
+                "end": 66,
+                "label": "UNIT"
+            },
+            {
+                "start": 69,
+                "end": 72,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Система трубопровод не должно превышать расстояние на уровне 65.1 бар в цех.",
+        "entities": [
+            {
+                "start": 40,
+                "end": 50,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 61,
+                "end": 65,
+                "label": "VALUE"
+            },
+            {
+                "start": 66,
+                "end": 69,
+                "label": "UNIT"
+            },
+            {
+                "start": 72,
+                "end": 75,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Трубопровод должен поддерживать высота 58.4 г/м³ при работе с воздух.",
+        "entities": [
+            {
+                "start": 32,
+                "end": 38,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 39,
+                "end": 43,
+                "label": "VALUE"
+            },
+            {
+                "start": 44,
+                "end": 48,
+                "label": "UNIT"
+            },
+            {
+                "start": 62,
+                "end": 68,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Температура в вентиляция не должно превышать 57.0 МПа согласно СП 60.13330.",
+        "entities": [
+            {
+                "start": 14,
+                "end": 24,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 25,
+                "end": 44,
+                "label": "ACTION"
+            },
+            {
+                "start": 45,
+                "end": 49,
+                "label": "VALUE"
+            },
+            {
+                "start": 50,
+                "end": 53,
+                "label": "UNIT"
+            },
+            {
+                "start": 63,
+                "end": 74,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Концентрация в фильтр должно быть 43.2 метров согласно ГОСТ Р 12.3.047.",
+        "entities": [
+            {
+                "start": 15,
+                "end": 21,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 22,
+                "end": 33,
+                "label": "ACTION"
+            },
+            {
+                "start": 34,
+                "end": 38,
+                "label": "VALUE"
+            },
+            {
+                "start": 39,
+                "end": 45,
+                "label": "UNIT"
+            },
+            {
+                "start": 55,
+                "end": 70,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Трубопровод должен поддерживать высота 70.7 метров при работе с вода.",
+        "entities": [
+            {
+                "start": 32,
+                "end": 38,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 39,
+                "end": 43,
+                "label": "VALUE"
+            },
+            {
+                "start": 44,
+                "end": 50,
+                "label": "UNIT"
+            },
+            {
+                "start": 64,
+                "end": 68,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СНиП 2.04.05-91 концентрация для масло не должно превышать 48.1 м³/ч.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 43,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 54,
+                "end": 73,
+                "label": "ACTION"
+            },
+            {
+                "start": 74,
+                "end": 78,
+                "label": "VALUE"
+            },
+            {
+                "start": 79,
+                "end": 83,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать расход воздуха 76.4 метров при работе с вода.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 45,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 46,
+                "end": 50,
+                "label": "VALUE"
+            },
+            {
+                "start": 51,
+                "end": 57,
+                "label": "UNIT"
+            },
+            {
+                "start": 71,
+                "end": 75,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СП 60.13330 температура для воздух должно обеспечивать 9.9 м³/ч.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 38,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 50,
+                "end": 69,
+                "label": "ACTION"
+            },
+            {
+                "start": 70,
+                "end": 73,
+                "label": "VALUE"
+            },
+            {
+                "start": 74,
+                "end": 78,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Расход воздуха в теплообменник должно обеспечивать 32.0 °C согласно СП 60.13330.",
+        "entities": [
+            {
+                "start": 17,
+                "end": 30,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 31,
+                "end": 50,
+                "label": "ACTION"
+            },
+            {
+                "start": 51,
+                "end": 55,
+                "label": "VALUE"
+            },
+            {
+                "start": 56,
+                "end": 58,
+                "label": "UNIT"
+            },
+            {
+                "start": 68,
+                "end": 79,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Фильтр должен поддерживать расход воздуха 27.4 г/м³ при работе с кислород.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 41,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 42,
+                "end": 46,
+                "label": "VALUE"
+            },
+            {
+                "start": 47,
+                "end": 51,
+                "label": "UNIT"
+            },
+            {
+                "start": 65,
+                "end": 73,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СНиП 2.04.05-91 температура для воздух не должно превышать 20.4 м³/ч.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 42,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 54,
+                "end": 73,
+                "label": "ACTION"
+            },
+            {
+                "start": 74,
+                "end": 78,
+                "label": "VALUE"
+            },
+            {
+                "start": 79,
+                "end": 83,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Концентрация в насос должно обеспечивать 79.3 метров согласно ГОСТ Р 12.3.047.",
+        "entities": [
+            {
+                "start": 15,
+                "end": 20,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 21,
+                "end": 40,
+                "label": "ACTION"
+            },
+            {
+                "start": 41,
+                "end": 45,
+                "label": "VALUE"
+            },
+            {
+                "start": 46,
+                "end": 52,
+                "label": "UNIT"
+            },
+            {
+                "start": 62,
+                "end": 77,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Система фильтр следует поддерживать расстояние на уровне 19.3 м³/ч в наружный воздух.",
+        "entities": [
+            {
+                "start": 36,
+                "end": 46,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 57,
+                "end": 61,
+                "label": "VALUE"
+            },
+            {
+                "start": 62,
+                "end": 66,
+                "label": "UNIT"
+            },
+            {
+                "start": 69,
+                "end": 84,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Система трубопровод должно быть высота на уровне 15.7 МПа в цех.",
+        "entities": [
+            {
+                "start": 32,
+                "end": 38,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 49,
+                "end": 53,
+                "label": "VALUE"
+            },
+            {
+                "start": 54,
+                "end": 57,
+                "label": "UNIT"
+            },
+            {
+                "start": 60,
+                "end": 63,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Температура в трубопровод должно быть 72.9 °C согласно СНиП 2.04.05-91.",
+        "entities": [
+            {
+                "start": 14,
+                "end": 25,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 26,
+                "end": 37,
+                "label": "ACTION"
+            },
+            {
+                "start": 38,
+                "end": 42,
+                "label": "VALUE"
+            },
+            {
+                "start": 43,
+                "end": 45,
+                "label": "UNIT"
+            },
+            {
+                "start": 55,
+                "end": 70,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Система теплообменник должно быть концентрация на уровне 88.0 бар в помещение.",
+        "entities": [
+            {
+                "start": 34,
+                "end": 46,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 57,
+                "end": 61,
+                "label": "VALUE"
+            },
+            {
+                "start": 62,
+                "end": 65,
+                "label": "UNIT"
+            },
+            {
+                "start": 68,
+                "end": 77,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Система вентиляция не должно превышать высота на уровне 99.3 МПа в цех.",
+        "entities": [
+            {
+                "start": 39,
+                "end": 45,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 56,
+                "end": 60,
+                "label": "VALUE"
+            },
+            {
+                "start": 61,
+                "end": 64,
+                "label": "UNIT"
+            },
+            {
+                "start": 67,
+                "end": 70,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать температура 69.9 МПа при работе с кислород.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 42,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 43,
+                "end": 47,
+                "label": "VALUE"
+            },
+            {
+                "start": 48,
+                "end": 51,
+                "label": "UNIT"
+            },
+            {
+                "start": 65,
+                "end": 73,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Система насос должно обеспечивать расстояние на уровне 8.9 бар в рабочая зона.",
+        "entities": [
+            {
+                "start": 34,
+                "end": 44,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 55,
+                "end": 58,
+                "label": "VALUE"
+            },
+            {
+                "start": 59,
+                "end": 62,
+                "label": "UNIT"
+            },
+            {
+                "start": 65,
+                "end": 77,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Концентрация в насос не должно превышать 58.1 МПа согласно ГОСТ 30494.",
+        "entities": [
+            {
+                "start": 15,
+                "end": 20,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 21,
+                "end": 40,
+                "label": "ACTION"
+            },
+            {
+                "start": 41,
+                "end": 45,
+                "label": "VALUE"
+            },
+            {
+                "start": 46,
+                "end": 49,
+                "label": "UNIT"
+            },
+            {
+                "start": 59,
+                "end": 69,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СП 60.13330 концентрация для воздух следует поддерживать 10.0 бар.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 39,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 51,
+                "end": 71,
+                "label": "ACTION"
+            },
+            {
+                "start": 72,
+                "end": 76,
+                "label": "VALUE"
+            },
+            {
+                "start": 77,
+                "end": 80,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Давление в фильтр должно обеспечивать 56.9 метров согласно СНиП 2.04.05-91.",
+        "entities": [
+            {
+                "start": 11,
+                "end": 17,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 18,
+                "end": 37,
+                "label": "ACTION"
+            },
+            {
+                "start": 38,
+                "end": 42,
+                "label": "VALUE"
+            },
+            {
+                "start": 43,
+                "end": 49,
+                "label": "UNIT"
+            },
+            {
+                "start": 59,
+                "end": 74,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СП 60.13330 давление для кислород не должно превышать 78.5 бар.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 35,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 49,
+                "end": 68,
+                "label": "ACTION"
+            },
+            {
+                "start": 69,
+                "end": 73,
+                "label": "VALUE"
+            },
+            {
+                "start": 74,
+                "end": 77,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Расход воздуха в трубопровод следует поддерживать 14.1 бар согласно ГОСТ 30494.",
+        "entities": [
+            {
+                "start": 17,
+                "end": 28,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 29,
+                "end": 49,
+                "label": "ACTION"
+            },
+            {
+                "start": 50,
+                "end": 54,
+                "label": "VALUE"
+            },
+            {
+                "start": 55,
+                "end": 58,
+                "label": "UNIT"
+            },
+            {
+                "start": 68,
+                "end": 78,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Высота в вентиляция должно быть 34.6 г/м³ согласно ГОСТ 30494.",
+        "entities": [
+            {
+                "start": 9,
+                "end": 19,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 20,
+                "end": 31,
+                "label": "ACTION"
+            },
+            {
+                "start": 32,
+                "end": 36,
+                "label": "VALUE"
+            },
+            {
+                "start": 37,
+                "end": 41,
+                "label": "UNIT"
+            },
+            {
+                "start": 51,
+                "end": 61,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Система вентиляция должно быть расход воздуха на уровне 45.0 МПа в наружный воздух.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 45,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 56,
+                "end": 60,
+                "label": "VALUE"
+            },
+            {
+                "start": 61,
+                "end": 64,
+                "label": "UNIT"
+            },
+            {
+                "start": 67,
+                "end": 82,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СНиП 2.04.05-91 температура для вода должно обеспечивать 82.8 °C.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 42,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 52,
+                "end": 71,
+                "label": "ACTION"
+            },
+            {
+                "start": 72,
+                "end": 76,
+                "label": "VALUE"
+            },
+            {
+                "start": 77,
+                "end": 79,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Система насос не должно превышать расстояние на уровне 39.8 °C в рабочая зона.",
+        "entities": [
+            {
+                "start": 34,
+                "end": 44,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 55,
+                "end": 59,
+                "label": "VALUE"
+            },
+            {
+                "start": 60,
+                "end": 62,
+                "label": "UNIT"
+            },
+            {
+                "start": 65,
+                "end": 77,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Система трубопровод не должно превышать концентрация на уровне 59.0 м³/ч в помещение.",
+        "entities": [
+            {
+                "start": 40,
+                "end": 52,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 63,
+                "end": 67,
+                "label": "VALUE"
+            },
+            {
+                "start": 68,
+                "end": 72,
+                "label": "UNIT"
+            },
+            {
+                "start": 75,
+                "end": 84,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Давление в теплообменник следует поддерживать 65.5 м³/ч согласно СП 60.13330.",
+        "entities": [
+            {
+                "start": 11,
+                "end": 24,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 25,
+                "end": 45,
+                "label": "ACTION"
+            },
+            {
+                "start": 46,
+                "end": 50,
+                "label": "VALUE"
+            },
+            {
+                "start": 51,
+                "end": 55,
+                "label": "UNIT"
+            },
+            {
+                "start": 65,
+                "end": 76,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Насос должен поддерживать давление 70.6 бар при работе с масло.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 34,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 35,
+                "end": 39,
+                "label": "VALUE"
+            },
+            {
+                "start": 40,
+                "end": 43,
+                "label": "UNIT"
+            },
+            {
+                "start": 57,
+                "end": 62,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям ГОСТ 30494 давление для вода должно обеспечивать 17.4 °C.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 34,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 44,
+                "end": 63,
+                "label": "ACTION"
+            },
+            {
+                "start": 64,
+                "end": 68,
+                "label": "VALUE"
+            },
+            {
+                "start": 69,
+                "end": 71,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Высота в теплообменник должно быть 48.5 °C согласно ГОСТ 30494.",
+        "entities": [
+            {
+                "start": 9,
+                "end": 22,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 23,
+                "end": 34,
+                "label": "ACTION"
+            },
+            {
+                "start": 35,
+                "end": 39,
+                "label": "VALUE"
+            },
+            {
+                "start": 40,
+                "end": 42,
+                "label": "UNIT"
+            },
+            {
+                "start": 52,
+                "end": 62,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СП 60.13330 давление для кислород должно быть 88.2 метров.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 35,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 49,
+                "end": 60,
+                "label": "ACTION"
+            },
+            {
+                "start": 61,
+                "end": 65,
+                "label": "VALUE"
+            },
+            {
+                "start": 66,
+                "end": 72,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Система насос не должно превышать расход воздуха на уровне 6.3 г/м³ в наружный воздух.",
+        "entities": [
+            {
+                "start": 34,
+                "end": 48,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 59,
+                "end": 62,
+                "label": "VALUE"
+            },
+            {
+                "start": 63,
+                "end": 67,
+                "label": "UNIT"
+            },
+            {
+                "start": 70,
+                "end": 85,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Теплообменник должен поддерживать давление 88.9 г/м³ при работе с вода.",
+        "entities": [
+            {
+                "start": 34,
+                "end": 42,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 43,
+                "end": 47,
+                "label": "VALUE"
+            },
+            {
+                "start": 48,
+                "end": 52,
+                "label": "UNIT"
+            },
+            {
+                "start": 66,
+                "end": 70,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать расстояние 36.1 МПа при работе с масло.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 41,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 42,
+                "end": 46,
+                "label": "VALUE"
+            },
+            {
+                "start": 47,
+                "end": 50,
+                "label": "UNIT"
+            },
+            {
+                "start": 64,
+                "end": 69,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Концентрация в вентиляция следует поддерживать 22.2 г/м³ согласно СНиП 2.04.05-91.",
+        "entities": [
+            {
+                "start": 15,
+                "end": 25,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 26,
+                "end": 46,
+                "label": "ACTION"
+            },
+            {
+                "start": 47,
+                "end": 51,
+                "label": "VALUE"
+            },
+            {
+                "start": 52,
+                "end": 56,
+                "label": "UNIT"
+            },
+            {
+                "start": 66,
+                "end": 81,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Температура в вентиляция не должно превышать 28.4 °C согласно СП 60.13330.",
+        "entities": [
+            {
+                "start": 14,
+                "end": 24,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 25,
+                "end": 44,
+                "label": "ACTION"
+            },
+            {
+                "start": 45,
+                "end": 49,
+                "label": "VALUE"
+            },
+            {
+                "start": 50,
+                "end": 52,
+                "label": "UNIT"
+            },
+            {
+                "start": 62,
+                "end": 73,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Насос должен поддерживать температура 49.1 метров при работе с кислород.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 37,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 38,
+                "end": 42,
+                "label": "VALUE"
+            },
+            {
+                "start": 43,
+                "end": 49,
+                "label": "UNIT"
+            },
+            {
+                "start": 63,
+                "end": 71,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Система теплообменник должно обеспечивать давление на уровне 61.4 °C в наружный воздух.",
+        "entities": [
+            {
+                "start": 42,
+                "end": 50,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 61,
+                "end": 65,
+                "label": "VALUE"
+            },
+            {
+                "start": 66,
+                "end": 68,
+                "label": "UNIT"
+            },
+            {
+                "start": 71,
+                "end": 86,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Фильтр должен поддерживать расход воздуха 73.2 МПа при работе с кислород.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 41,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 42,
+                "end": 46,
+                "label": "VALUE"
+            },
+            {
+                "start": 47,
+                "end": 50,
+                "label": "UNIT"
+            },
+            {
+                "start": 64,
+                "end": 72,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Фильтр должен поддерживать расход воздуха 3.3 м³/ч при работе с масло.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 41,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 42,
+                "end": 45,
+                "label": "VALUE"
+            },
+            {
+                "start": 46,
+                "end": 50,
+                "label": "UNIT"
+            },
+            {
+                "start": 64,
+                "end": 69,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Концентрация в теплообменник не должно превышать 63.2 г/м³ согласно ГОСТ 30494.",
+        "entities": [
+            {
+                "start": 15,
+                "end": 28,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 29,
+                "end": 48,
+                "label": "ACTION"
+            },
+            {
+                "start": 49,
+                "end": 53,
+                "label": "VALUE"
+            },
+            {
+                "start": 54,
+                "end": 58,
+                "label": "UNIT"
+            },
+            {
+                "start": 68,
+                "end": 78,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Фильтр должен поддерживать высота 50.9 бар при работе с воздух.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 33,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 34,
+                "end": 38,
+                "label": "VALUE"
+            },
+            {
+                "start": 39,
+                "end": 42,
+                "label": "UNIT"
+            },
+            {
+                "start": 56,
+                "end": 62,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Теплообменник должен поддерживать высота 35.6 м³/ч при работе с вода.",
+        "entities": [
+            {
+                "start": 34,
+                "end": 40,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 41,
+                "end": 45,
+                "label": "VALUE"
+            },
+            {
+                "start": 46,
+                "end": 50,
+                "label": "UNIT"
+            },
+            {
+                "start": 64,
+                "end": 68,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Система теплообменник следует поддерживать расстояние на уровне 52.3 бар в помещение.",
+        "entities": [
+            {
+                "start": 43,
+                "end": 53,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 64,
+                "end": 68,
+                "label": "VALUE"
+            },
+            {
+                "start": 69,
+                "end": 72,
+                "label": "UNIT"
+            },
+            {
+                "start": 75,
+                "end": 84,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать расход воздуха 57.2 °C при работе с воздух.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 45,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 46,
+                "end": 50,
+                "label": "VALUE"
+            },
+            {
+                "start": 51,
+                "end": 53,
+                "label": "UNIT"
+            },
+            {
+                "start": 67,
+                "end": 73,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Система фильтр должно быть расстояние на уровне 6.1 МПа в наружный воздух.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 37,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 48,
+                "end": 51,
+                "label": "VALUE"
+            },
+            {
+                "start": 52,
+                "end": 55,
+                "label": "UNIT"
+            },
+            {
+                "start": 58,
+                "end": 73,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Расход воздуха в фильтр следует поддерживать 79.1 МПа согласно СП 60.13330.",
+        "entities": [
+            {
+                "start": 17,
+                "end": 23,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 24,
+                "end": 44,
+                "label": "ACTION"
+            },
+            {
+                "start": 45,
+                "end": 49,
+                "label": "VALUE"
+            },
+            {
+                "start": 50,
+                "end": 53,
+                "label": "UNIT"
+            },
+            {
+                "start": 63,
+                "end": 74,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Давление в насос должно обеспечивать 81.9 бар согласно СП 60.13330.",
+        "entities": [
+            {
+                "start": 11,
+                "end": 16,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 17,
+                "end": 36,
+                "label": "ACTION"
+            },
+            {
+                "start": 37,
+                "end": 41,
+                "label": "VALUE"
+            },
+            {
+                "start": 42,
+                "end": 45,
+                "label": "UNIT"
+            },
+            {
+                "start": 55,
+                "end": 66,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Система теплообменник не должно превышать расход воздуха на уровне 79.5 бар в рабочая зона.",
+        "entities": [
+            {
+                "start": 42,
+                "end": 56,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 67,
+                "end": 71,
+                "label": "VALUE"
+            },
+            {
+                "start": 72,
+                "end": 75,
+                "label": "UNIT"
+            },
+            {
+                "start": 78,
+                "end": 90,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Высота в насос не должно превышать 43.6 метров согласно ГОСТ 30494.",
+        "entities": [
+            {
+                "start": 9,
+                "end": 14,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 15,
+                "end": 34,
+                "label": "ACTION"
+            },
+            {
+                "start": 35,
+                "end": 39,
+                "label": "VALUE"
+            },
+            {
+                "start": 40,
+                "end": 46,
+                "label": "UNIT"
+            },
+            {
+                "start": 56,
+                "end": 66,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Система теплообменник должно обеспечивать температура на уровне 33.7 г/м³ в рабочая зона.",
+        "entities": [
+            {
+                "start": 42,
+                "end": 53,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 64,
+                "end": 68,
+                "label": "VALUE"
+            },
+            {
+                "start": 69,
+                "end": 73,
+                "label": "UNIT"
+            },
+            {
+                "start": 76,
+                "end": 88,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Теплообменник должен поддерживать расход воздуха 86.3 МПа при работе с азот.",
+        "entities": [
+            {
+                "start": 34,
+                "end": 48,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 49,
+                "end": 53,
+                "label": "VALUE"
+            },
+            {
+                "start": 54,
+                "end": 57,
+                "label": "UNIT"
+            },
+            {
+                "start": 71,
+                "end": 75,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям ГОСТ Р 12.3.047 расстояние для кислород должно обеспечивать 25.0 °C.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 41,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 55,
+                "end": 74,
+                "label": "ACTION"
+            },
+            {
+                "start": 75,
+                "end": 79,
+                "label": "VALUE"
+            },
+            {
+                "start": 80,
+                "end": 82,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Давление в фильтр следует поддерживать 72.1 г/м³ согласно ГОСТ Р 12.3.047.",
+        "entities": [
+            {
+                "start": 11,
+                "end": 17,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 18,
+                "end": 38,
+                "label": "ACTION"
+            },
+            {
+                "start": 39,
+                "end": 43,
+                "label": "VALUE"
+            },
+            {
+                "start": 44,
+                "end": 48,
+                "label": "UNIT"
+            },
+            {
+                "start": 58,
+                "end": 73,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Система насос не должно превышать давление на уровне 91.9 МПа в цех.",
+        "entities": [
+            {
+                "start": 34,
+                "end": 42,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 53,
+                "end": 57,
+                "label": "VALUE"
+            },
+            {
+                "start": 58,
+                "end": 61,
+                "label": "UNIT"
+            },
+            {
+                "start": 64,
+                "end": 67,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать температура 47.2 бар при работе с кислород.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 42,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 43,
+                "end": 47,
+                "label": "VALUE"
+            },
+            {
+                "start": 48,
+                "end": 51,
+                "label": "UNIT"
+            },
+            {
+                "start": 65,
+                "end": 73,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Концентрация в насос должно быть 84.5 бар согласно ГОСТ Р 12.3.047.",
+        "entities": [
+            {
+                "start": 15,
+                "end": 20,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 21,
+                "end": 32,
+                "label": "ACTION"
+            },
+            {
+                "start": 33,
+                "end": 37,
+                "label": "VALUE"
+            },
+            {
+                "start": 38,
+                "end": 41,
+                "label": "UNIT"
+            },
+            {
+                "start": 51,
+                "end": 66,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СП 60.13330 расстояние для азот не должно превышать 72.0 бар.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 37,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 47,
+                "end": 66,
+                "label": "ACTION"
+            },
+            {
+                "start": 67,
+                "end": 71,
+                "label": "VALUE"
+            },
+            {
+                "start": 72,
+                "end": 75,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Насос должен поддерживать высота 70.8 бар при работе с азот.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 32,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 33,
+                "end": 37,
+                "label": "VALUE"
+            },
+            {
+                "start": 38,
+                "end": 41,
+                "label": "UNIT"
+            },
+            {
+                "start": 55,
+                "end": 59,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Система фильтр должно быть концентрация на уровне 17.4 м³/ч в цех.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 39,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 50,
+                "end": 54,
+                "label": "VALUE"
+            },
+            {
+                "start": 55,
+                "end": 59,
+                "label": "UNIT"
+            },
+            {
+                "start": 62,
+                "end": 65,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СП 60.13330 концентрация для вода не должно превышать 99.4 бар.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 39,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 49,
+                "end": 68,
+                "label": "ACTION"
+            },
+            {
+                "start": 69,
+                "end": 73,
+                "label": "VALUE"
+            },
+            {
+                "start": 74,
+                "end": 77,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Система трубопровод должно обеспечивать давление на уровне 51.4 г/м³ в цех.",
+        "entities": [
+            {
+                "start": 40,
+                "end": 48,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 59,
+                "end": 63,
+                "label": "VALUE"
+            },
+            {
+                "start": 64,
+                "end": 68,
+                "label": "UNIT"
+            },
+            {
+                "start": 71,
+                "end": 74,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Давление в трубопровод должно обеспечивать 42.0 г/м³ согласно СП 60.13330.",
+        "entities": [
+            {
+                "start": 11,
+                "end": 22,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 23,
+                "end": 42,
+                "label": "ACTION"
+            },
+            {
+                "start": 43,
+                "end": 47,
+                "label": "VALUE"
+            },
+            {
+                "start": 48,
+                "end": 52,
+                "label": "UNIT"
+            },
+            {
+                "start": 62,
+                "end": 73,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать расстояние 29.5 м³/ч при работе с воздух.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 41,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 42,
+                "end": 46,
+                "label": "VALUE"
+            },
+            {
+                "start": 47,
+                "end": 51,
+                "label": "UNIT"
+            },
+            {
+                "start": 65,
+                "end": 71,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Расстояние в фильтр следует поддерживать 4.1 г/м³ согласно ГОСТ 30494.",
+        "entities": [
+            {
+                "start": 13,
+                "end": 19,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 20,
+                "end": 40,
+                "label": "ACTION"
+            },
+            {
+                "start": 41,
+                "end": 44,
+                "label": "VALUE"
+            },
+            {
+                "start": 45,
+                "end": 49,
+                "label": "UNIT"
+            },
+            {
+                "start": 59,
+                "end": 69,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать температура 92.6 м³/ч при работе с вода.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 42,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 43,
+                "end": 47,
+                "label": "VALUE"
+            },
+            {
+                "start": 48,
+                "end": 52,
+                "label": "UNIT"
+            },
+            {
+                "start": 66,
+                "end": 70,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать расход воздуха 9.0 °C при работе с воздух.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 45,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 46,
+                "end": 49,
+                "label": "VALUE"
+            },
+            {
+                "start": 50,
+                "end": 52,
+                "label": "UNIT"
+            },
+            {
+                "start": 66,
+                "end": 72,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Система вентиляция должно быть концентрация на уровне 69.8 метров в наружный воздух.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 43,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 54,
+                "end": 58,
+                "label": "VALUE"
+            },
+            {
+                "start": 59,
+                "end": 65,
+                "label": "UNIT"
+            },
+            {
+                "start": 68,
+                "end": 83,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СНиП 2.04.05-91 концентрация для кислород не должно превышать 34.2 °C.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 43,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 57,
+                "end": 76,
+                "label": "ACTION"
+            },
+            {
+                "start": 77,
+                "end": 81,
+                "label": "VALUE"
+            },
+            {
+                "start": 82,
+                "end": 84,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать температура 58.7 бар при работе с масло.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 42,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 43,
+                "end": 47,
+                "label": "VALUE"
+            },
+            {
+                "start": 48,
+                "end": 51,
+                "label": "UNIT"
+            },
+            {
+                "start": 65,
+                "end": 70,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Расход воздуха в трубопровод должно обеспечивать 24.3 г/м³ согласно СНиП 2.04.05-91.",
+        "entities": [
+            {
+                "start": 17,
+                "end": 28,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 29,
+                "end": 48,
+                "label": "ACTION"
+            },
+            {
+                "start": 49,
+                "end": 53,
+                "label": "VALUE"
+            },
+            {
+                "start": 54,
+                "end": 58,
+                "label": "UNIT"
+            },
+            {
+                "start": 68,
+                "end": 83,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Высота в вентиляция следует поддерживать 93.3 м³/ч согласно СНиП 2.04.05-91.",
+        "entities": [
+            {
+                "start": 9,
+                "end": 19,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 20,
+                "end": 40,
+                "label": "ACTION"
+            },
+            {
+                "start": 41,
+                "end": 45,
+                "label": "VALUE"
+            },
+            {
+                "start": 46,
+                "end": 50,
+                "label": "UNIT"
+            },
+            {
+                "start": 60,
+                "end": 75,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Температура в трубопровод не должно превышать 37.9 МПа согласно СНиП 2.04.05-91.",
+        "entities": [
+            {
+                "start": 14,
+                "end": 25,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 26,
+                "end": 45,
+                "label": "ACTION"
+            },
+            {
+                "start": 46,
+                "end": 50,
+                "label": "VALUE"
+            },
+            {
+                "start": 51,
+                "end": 54,
+                "label": "UNIT"
+            },
+            {
+                "start": 64,
+                "end": 79,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Высота в трубопровод не должно превышать 35.1 °C согласно ГОСТ Р 12.3.047.",
+        "entities": [
+            {
+                "start": 9,
+                "end": 20,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 21,
+                "end": 40,
+                "label": "ACTION"
+            },
+            {
+                "start": 41,
+                "end": 45,
+                "label": "VALUE"
+            },
+            {
+                "start": 46,
+                "end": 48,
+                "label": "UNIT"
+            },
+            {
+                "start": 58,
+                "end": 73,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Трубопровод должен поддерживать расход воздуха 42.7 г/м³ при работе с воздух.",
+        "entities": [
+            {
+                "start": 32,
+                "end": 46,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 47,
+                "end": 51,
+                "label": "VALUE"
+            },
+            {
+                "start": 52,
+                "end": 56,
+                "label": "UNIT"
+            },
+            {
+                "start": 70,
+                "end": 76,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Фильтр должен поддерживать концентрация 34.0 бар при работе с вода.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 39,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 40,
+                "end": 44,
+                "label": "VALUE"
+            },
+            {
+                "start": 45,
+                "end": 48,
+                "label": "UNIT"
+            },
+            {
+                "start": 62,
+                "end": 66,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Высота в трубопровод должно быть 8.4 °C согласно СНиП 2.04.05-91.",
+        "entities": [
+            {
+                "start": 9,
+                "end": 20,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 21,
+                "end": 32,
+                "label": "ACTION"
+            },
+            {
+                "start": 33,
+                "end": 36,
+                "label": "VALUE"
+            },
+            {
+                "start": 37,
+                "end": 39,
+                "label": "UNIT"
+            },
+            {
+                "start": 49,
+                "end": 64,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "Вентиляция должен поддерживать расход воздуха 2.2 г/м³ при работе с вода.",
+        "entities": [
+            {
+                "start": 31,
+                "end": 45,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 46,
+                "end": 49,
+                "label": "VALUE"
+            },
+            {
+                "start": 50,
+                "end": 54,
+                "label": "UNIT"
+            },
+            {
+                "start": 68,
+                "end": 72,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям ГОСТ 30494 температура для азот должно обеспечивать 70.2 МПа.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 37,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 47,
+                "end": 66,
+                "label": "ACTION"
+            },
+            {
+                "start": 67,
+                "end": 71,
+                "label": "VALUE"
+            },
+            {
+                "start": 72,
+                "end": 75,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям ГОСТ 30494 давление для кислород должно обеспечивать 64.8 МПа.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 34,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 48,
+                "end": 67,
+                "label": "ACTION"
+            },
+            {
+                "start": 68,
+                "end": 72,
+                "label": "VALUE"
+            },
+            {
+                "start": 73,
+                "end": 76,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Фильтр должен поддерживать температура 96.8 °C при работе с кислород.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 38,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 39,
+                "end": 43,
+                "label": "VALUE"
+            },
+            {
+                "start": 44,
+                "end": 46,
+                "label": "UNIT"
+            },
+            {
+                "start": 60,
+                "end": 68,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Система фильтр следует поддерживать высота на уровне 41.7 бар в цех.",
+        "entities": [
+            {
+                "start": 36,
+                "end": 42,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 53,
+                "end": 57,
+                "label": "VALUE"
+            },
+            {
+                "start": 58,
+                "end": 61,
+                "label": "UNIT"
+            },
+            {
+                "start": 64,
+                "end": 67,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Система трубопровод должно обеспечивать высота на уровне 84.9 метров в рабочая зона.",
+        "entities": [
+            {
+                "start": 40,
+                "end": 46,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 57,
+                "end": 61,
+                "label": "VALUE"
+            },
+            {
+                "start": 62,
+                "end": 68,
+                "label": "UNIT"
+            },
+            {
+                "start": 71,
+                "end": 83,
+                "label": "LOCATION"
+            }
+        ]
+    },
+    {
+        "text": "Расстояние в вентиляция должно быть 29.0 МПа согласно ГОСТ Р 12.3.047.",
+        "entities": [
+            {
+                "start": 13,
+                "end": 23,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 24,
+                "end": 35,
+                "label": "ACTION"
+            },
+            {
+                "start": 36,
+                "end": 40,
+                "label": "VALUE"
+            },
+            {
+                "start": 41,
+                "end": 44,
+                "label": "UNIT"
+            },
+            {
+                "start": 54,
+                "end": 69,
+                "label": "STANDARD"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям СП 60.13330 давление для вода следует поддерживать 26.5 м³/ч.",
+        "entities": [
+            {
+                "start": 27,
+                "end": 35,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 45,
+                "end": 65,
+                "label": "ACTION"
+            },
+            {
+                "start": 66,
+                "end": 70,
+                "label": "VALUE"
+            },
+            {
+                "start": 71,
+                "end": 75,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "По требованиям ГОСТ 30494 расход воздуха для кислород должно быть 35.7 м³/ч.",
+        "entities": [
+            {
+                "start": 26,
+                "end": 40,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 54,
+                "end": 65,
+                "label": "ACTION"
+            },
+            {
+                "start": 66,
+                "end": 70,
+                "label": "VALUE"
+            },
+            {
+                "start": 71,
+                "end": 75,
+                "label": "UNIT"
+            }
+        ]
+    },
+    {
+        "text": "Трубопровод должен поддерживать концентрация 34.4 метров при работе с вода.",
+        "entities": [
+            {
+                "start": 32,
+                "end": 44,
+                "label": "PARAMETER"
+            },
+            {
+                "start": 45,
+                "end": 49,
+                "label": "VALUE"
+            },
+            {
+                "start": 50,
+                "end": 56,
+                "label": "UNIT"
+            },
+            {
+                "start": 70,
+                "end": 74,
+                "label": "SUBSTANCE"
+            }
+        ]
+    },
+    {
+        "text": "Температура в теплообменник не должно превышать 81.1 °C согласно ГОСТ 30494.",
+        "entities": [
+            {
+                "start": 14,
+                "end": 27,
+                "label": "COMPONENT"
+            },
+            {
+                "start": 28,
+                "end": 47,
+                "label": "ACTION"
+            },
+            {
+                "start": 48,
+                "end": 52,
+                "label": "VALUE"
+            },
+            {
+                "start": 53,
+                "end": 55,
+                "label": "UNIT"
+            },
+            {
+                "start": 65,
+                "end": 75,
+                "label": "STANDARD"
+            }
+        ]
+    }
+]
