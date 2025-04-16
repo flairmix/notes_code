@@ -2,11 +2,13 @@ from owlready2 import get_ontology, Thing, ObjectProperty, DataProperty, types
 from pyvis.network import Network
 
 class OntologyBuilder:
-    def __init__(self, base_uri="http://example.org/ontology#"):
+    def __init__(self, base_uri="http://example.org/ontology#", gravity=-7000, spring_length=30):
         self.onto = get_ontology(base_uri)
         self.classes = {}
         self.object_properties = {}
         self.individuals = {}
+        self.gravity = gravity
+        self.spring_length = spring_length
 
     def add_class(self, class_name, parent_class=Thing):
         if class_name not in self.classes:
@@ -38,7 +40,7 @@ class OntologyBuilder:
 
     def visualize(self, filename="ontology.html"):
         net = Network(width="2500px", height="1100px", cdn_resources='in_line', notebook=False)
-        net.barnes_hut(gravity=-7000, spring_length=30)
+        net.barnes_hut(gravity=self.gravity, spring_length=self.spring_length)
 
         # Adding classes
         for cls_name, cls_obj in self.classes.items():
