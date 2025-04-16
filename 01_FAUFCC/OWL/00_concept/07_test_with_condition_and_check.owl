@@ -1,0 +1,163 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/ontology"
+         xmlns="http://example.org/ontology#">
+
+<owl:Ontology rdf:about="http://example.org/ontology"/>
+
+<owl:ObjectProperty rdf:about="#hasPart">
+  <rdfs:domain rdf:resource="#Apartment"/>
+  <rdfs:range rdf:resource="#Door"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#property">
+  <rdfs:domain rdf:resource="#Door_leaf"/>
+  <rdfs:range rdf:resource="#Width"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#value">
+  <rdfs:domain rdf:resource="#Width"/>
+  <rdfs:range rdf:resource="#Millimeter"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#exist">
+  <rdfs:domain rdf:resource="#Condition_component_exist"/>
+  <rdfs:range rdf:resource="#Door"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#check">
+  <rdfs:domain rdf:resource="#Check_property_value_greater"/>
+  <rdfs:range rdf:resource="#Millimeter"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Site">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Construction">
+  <rdfs:subClassOf rdf:resource="#Site"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Level">
+  <rdfs:subClassOf rdf:resource="#Construction"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Room">
+  <rdfs:subClassOf rdf:resource="#Level"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Zone">
+  <rdfs:subClassOf rdf:resource="#Level"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Component">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Property">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Units">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Apartment">
+  <rdfs:subClassOf rdf:resource="#Zone"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Door">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Door_leaf">
+  <rdfs:subClassOf rdf:resource="#Door"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Width">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Height">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Distance">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Millimeter">
+  <rdfs:subClassOf rdf:resource="#Units"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Validation">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Condition">
+  <rdfs:subClassOf rdf:resource="#Validation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Condition_component_exist">
+  <rdfs:subClassOf rdf:resource="#Condition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Condition_property_value_equal">
+  <rdfs:subClassOf rdf:resource="#Condition"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Check">
+  <rdfs:subClassOf rdf:resource="#Validation"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Check_property_value_equal">
+  <rdfs:subClassOf rdf:resource="#Check"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Check_property_value_greater">
+  <rdfs:subClassOf rdf:resource="#Check"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Check_property_value_less">
+  <rdfs:subClassOf rdf:resource="#Check"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Тип квартиры №1">
+  <rdf:type rdf:resource="#Apartment"/>
+  <hasPart rdf:resource="#Входная дверь"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Входная дверь">
+  <rdf:type rdf:resource="#Door"/>
+  <hasPart rdf:resource="#Полотно входной двери 1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Полотно входной двери 1">
+  <rdf:type rdf:resource="#Door_leaf"/>
+  <property rdf:resource="#Ширина"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ширина">
+  <rdf:type rdf:resource="#Width"/>
+  <value rdf:resource="#900"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#900">
+  <rdf:type rdf:resource="#Millimeter"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Условие проверки №1">
+  <rdf:type rdf:resource="#Condition_component_exist"/>
+  <exist rdf:resource="#Входная дверь"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Проверка №1">
+  <rdf:type rdf:resource="#Check_property_value_greater"/>
+  <check rdf:resource="#900"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
