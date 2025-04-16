@@ -246,8 +246,8 @@ function highlightFilter(filter) {
         <style type="text/css">
 
              #mynetwork {
-                 width: 2500px;
-                 height: 1100px;
+                 width: 100%;
+                 height: 100vh;
                  background-color: #ffffff;
                  border: 1px solid lightgray;
                  position: relative;
@@ -260,7 +260,39 @@ function highlightFilter(filter) {
 
              
         </style>
-    </head>
+    
+        <style>
+        html, body {
+            width: 100%;
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #mynetwork {
+            width: 100vw !important;
+            height: 100vh !important;
+            border: none;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 0;
+        }
+
+        .layer-controls {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            z-index: 10;
+            background: white;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+        }
+        </style>
+        
+</head>
 
 
     <body>
@@ -302,8 +334,8 @@ function highlightFilter(filter) {
                   
 
                   // parsing and collecting nodes and edges from the python
-                  nodes = new vis.DataSet([{"color": "lightblue", "id": "class_Apartment", "label": "Apartment", "shape": "ellipse"}, {"color": "lightblue", "id": "class_Door", "label": "Door", "shape": "ellipse"}, {"color": "lightblue", "id": "class_Door_leaf", "label": "Door_leaf", "shape": "ellipse"}, {"color": "lightblue", "id": "class_Width", "label": "Width", "shape": "ellipse"}, {"color": "lightblue", "id": "class_Distance", "label": "Distance", "shape": "ellipse"}, {"color": "lightblue", "id": "class_Millimeter", "label": "Millimeter", "shape": "ellipse"}, {"color": "lightgreen", "id": "ind_\u0422\u0438\u043f \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u044b \u21161", "label": "\u0422\u0438\u043f \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u044b \u21161", "shape": "dot"}, {"color": "lightgreen", "id": "ind_\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c", "label": "\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c", "shape": "dot"}, {"color": "lightgreen", "id": "ind_\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1", "label": "\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1", "shape": "dot"}, {"color": "lightgreen", "id": "ind_\u0428\u0438\u0440\u0438\u043d\u0430 1", "label": "\u0428\u0438\u0440\u0438\u043d\u0430 1", "shape": "dot"}, {"color": "lightgreen", "id": "ind_900", "label": "900", "shape": "dot"}]);
-                  edges = new vis.DataSet([{"from": "class_Door", "label": "subclass_of", "length": 400, "to": "class_Door_leaf"}, {"from": "class_Apartment", "to": "ind_\u0422\u0438\u043f \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u044b \u21161"}, {"from": "class_Door", "to": "ind_\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c"}, {"from": "class_Door_leaf", "to": "ind_\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1"}, {"from": "class_Width", "to": "ind_\u0428\u0438\u0440\u0438\u043d\u0430 1"}, {"from": "class_Millimeter", "to": "ind_900"}, {"from": "ind_\u0422\u0438\u043f \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u044b \u21161", "label": "hasPart", "length": 300, "to": "ind_\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c"}, {"from": "ind_\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c", "label": "hasPart", "length": 300, "to": "ind_\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1"}, {"from": "ind_\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1", "label": "property", "length": 300, "to": "ind_\u0428\u0438\u0440\u0438\u043d\u0430 1"}, {"from": "ind_\u0428\u0438\u0440\u0438\u043d\u0430 1", "label": "value", "length": 300, "to": "ind_900"}]);
+                  nodes = new vis.DataSet([{"group": "class", "id": "class_Site", "label": "Site", "shape": "box", "title": "Class: Site"}, {"group": "class", "id": "class_Construction", "label": "Construction", "shape": "box", "title": "Class: Construction"}, {"group": "class", "id": "class_Level", "label": "Level", "shape": "box", "title": "Class: Level"}, {"group": "class", "id": "class_Room", "label": "Room", "shape": "box", "title": "Class: Room"}, {"group": "class", "id": "class_Zone", "label": "Zone", "shape": "box", "title": "Class: Zone"}, {"group": "class", "id": "class_Component", "label": "Component", "shape": "box", "title": "Class: Component"}, {"group": "class", "id": "class_Property", "label": "Property", "shape": "box", "title": "Class: Property"}, {"group": "class", "id": "class_Units", "label": "Units", "shape": "box", "title": "Class: Units"}, {"group": "class", "id": "class_Apartment", "label": "Apartment", "shape": "box", "title": "Class: Apartment"}, {"group": "class", "id": "class_Door", "label": "Door", "shape": "box", "title": "Class: Door"}, {"group": "class", "id": "class_Door_leaf", "label": "Door_leaf", "shape": "box", "title": "Class: Door_leaf"}, {"group": "class", "id": "class_Width", "label": "Width", "shape": "box", "title": "Class: Width"}, {"group": "class", "id": "class_Height", "label": "Height", "shape": "box", "title": "Class: Height"}, {"group": "class", "id": "class_Distance", "label": "Distance", "shape": "box", "title": "Class: Distance"}, {"group": "class", "id": "class_Millimeter", "label": "Millimeter", "shape": "box", "title": "Class: Millimeter"}, {"group": "class", "id": "class_Validation", "label": "Validation", "shape": "box", "title": "Class: Validation"}, {"group": "class", "id": "class_Condition", "label": "Condition", "shape": "box", "title": "Class: Condition"}, {"group": "class", "id": "class_Condition_component_exist", "label": "Condition_component_exist", "shape": "box", "title": "Class: Condition_component_exist"}, {"group": "class", "id": "class_Condition_property_value_equal", "label": "Condition_property_value_equal", "shape": "box", "title": "Class: Condition_property_value_equal"}, {"group": "class", "id": "class_Check", "label": "Check", "shape": "box", "title": "Class: Check"}, {"group": "class", "id": "class_Check_property_value_equal", "label": "Check_property_value_equal", "shape": "box", "title": "Class: Check_property_value_equal"}, {"group": "class", "id": "class_Check_property_value_greater", "label": "Check_property_value_greater", "shape": "box", "title": "Class: Check_property_value_greater"}, {"group": "class", "id": "class_Check_property_value_less", "label": "Check_property_value_less", "shape": "box", "title": "Class: Check_property_value_less"}, {"group": "individual", "id": "ind_\u0422\u0438\u043f \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u044b \u21161", "label": "\u0422\u0438\u043f \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u044b \u21161", "shape": "dot", "title": "Individual of class: Apartment"}, {"group": "individual", "id": "ind_\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c", "label": "\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c", "shape": "dot", "title": "Individual of class: Door"}, {"group": "individual", "id": "ind_\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1", "label": "\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1", "shape": "dot", "title": "Individual of class: Door_leaf"}, {"group": "individual", "id": "ind_\u0428\u0438\u0440\u0438\u043d\u0430", "label": "\u0428\u0438\u0440\u0438\u043d\u0430", "shape": "dot", "title": "Individual of class: Width"}, {"group": "individual", "id": "ind_900", "label": "900", "shape": "dot", "title": "Individual of class: Millimeter"}, {"group": "individual", "id": "ind_\u0423\u0441\u043b\u043e\u0432\u0438\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u21161", "label": "\u0423\u0441\u043b\u043e\u0432\u0438\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u21161", "shape": "dot", "title": "Individual of class: Condition_component_exist"}, {"group": "individual", "id": "ind_\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u21161", "label": "\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u21161", "shape": "dot", "title": "Individual of class: Check_property_value_greater"}, {"group": "property", "id": "prop_hasPart_1", "label": "hasPart", "shape": "triangle", "title": "hasPart: \u0422\u0438\u043f \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u044b \u21161 \u2192 \u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c"}, {"group": "property", "id": "prop_hasPart_2", "label": "hasPart", "shape": "triangle", "title": "hasPart: \u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c \u2192 \u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1"}, {"group": "property", "id": "prop_property_3", "label": "property", "shape": "triangle", "title": "property: \u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1 \u2192 \u0428\u0438\u0440\u0438\u043d\u0430"}, {"group": "property", "id": "prop_value_4", "label": "value", "shape": "triangle", "title": "value: \u0428\u0438\u0440\u0438\u043d\u0430 \u2192 900"}, {"group": "property", "id": "prop_exist_5", "label": "exist", "shape": "triangle", "title": "exist: \u0423\u0441\u043b\u043e\u0432\u0438\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u21161 \u2192 \u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c"}, {"group": "property", "id": "prop_check_6", "label": "check", "shape": "triangle", "title": "check: \u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u21161 \u2192 900"}]);
+                  edges = new vis.DataSet([{"arrows": "to", "color": "gray", "from": "class_Site", "group": "edge_class", "label": "subclass_of", "to": "class_Construction", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Construction", "group": "edge_class", "label": "subclass_of", "to": "class_Level", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Level", "group": "edge_class", "label": "subclass_of", "to": "class_Room", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Level", "group": "edge_class", "label": "subclass_of", "to": "class_Zone", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Zone", "group": "edge_class", "label": "subclass_of", "to": "class_Apartment", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Component", "group": "edge_class", "label": "subclass_of", "to": "class_Door", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Door", "group": "edge_class", "label": "subclass_of", "to": "class_Door_leaf", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Property", "group": "edge_class", "label": "subclass_of", "to": "class_Width", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Property", "group": "edge_class", "label": "subclass_of", "to": "class_Height", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Property", "group": "edge_class", "label": "subclass_of", "to": "class_Distance", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Units", "group": "edge_class", "label": "subclass_of", "to": "class_Millimeter", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Validation", "group": "edge_class", "label": "subclass_of", "to": "class_Condition", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Condition", "group": "edge_class", "label": "subclass_of", "to": "class_Condition_component_exist", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Condition", "group": "edge_class", "label": "subclass_of", "to": "class_Condition_property_value_equal", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Validation", "group": "edge_class", "label": "subclass_of", "to": "class_Check", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Check", "group": "edge_class", "label": "subclass_of", "to": "class_Check_property_value_equal", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Check", "group": "edge_class", "label": "subclass_of", "to": "class_Check_property_value_greater", "width": 2}, {"arrows": "to", "color": "gray", "from": "class_Check", "group": "edge_class", "label": "subclass_of", "to": "class_Check_property_value_less", "width": 2}, {"arrows": "to", "color": "black", "from": "class_Apartment", "group": "edge_ind", "to": "ind_\u0422\u0438\u043f \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u044b \u21161", "width": 2}, {"arrows": "to", "color": "black", "from": "class_Door", "group": "edge_ind", "to": "ind_\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c", "width": 2}, {"arrows": "to", "color": "black", "from": "class_Door_leaf", "group": "edge_ind", "to": "ind_\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1", "width": 2}, {"arrows": "to", "color": "black", "from": "class_Width", "group": "edge_ind", "to": "ind_\u0428\u0438\u0440\u0438\u043d\u0430", "width": 2}, {"arrows": "to", "color": "black", "from": "class_Millimeter", "group": "edge_ind", "to": "ind_900", "width": 2}, {"arrows": "to", "color": "black", "from": "class_Condition_component_exist", "group": "edge_ind", "to": "ind_\u0423\u0441\u043b\u043e\u0432\u0438\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u21161", "width": 2}, {"arrows": "to", "color": "black", "from": "class_Check_property_value_greater", "group": "edge_ind", "to": "ind_\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u21161", "width": 2}, {"arrows": "to", "color": "orange", "from": "ind_\u0422\u0438\u043f \u043a\u0432\u0430\u0440\u0442\u0438\u0440\u044b \u21161", "group": "edge_prop", "to": "prop_hasPart_1", "width": 2}, {"arrows": "to", "color": "orange", "from": "prop_hasPart_1", "group": "edge_prop", "to": "ind_\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c", "width": 2}, {"arrows": "to", "color": "orange", "from": "ind_\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c", "group": "edge_prop", "to": "prop_hasPart_2", "width": 2}, {"arrows": "to", "color": "orange", "from": "prop_hasPart_2", "group": "edge_prop", "to": "ind_\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1", "width": 2}, {"arrows": "to", "color": "orange", "from": "ind_\u041f\u043e\u043b\u043e\u0442\u043d\u043e \u0432\u0445\u043e\u0434\u043d\u043e\u0439 \u0434\u0432\u0435\u0440\u0438 1", "group": "edge_prop", "to": "prop_property_3", "width": 2}, {"arrows": "to", "color": "orange", "from": "prop_property_3", "group": "edge_prop", "to": "ind_\u0428\u0438\u0440\u0438\u043d\u0430", "width": 2}, {"arrows": "to", "color": "orange", "from": "ind_\u0428\u0438\u0440\u0438\u043d\u0430", "group": "edge_prop", "to": "prop_value_4", "width": 2}, {"arrows": "to", "color": "orange", "from": "prop_value_4", "group": "edge_prop", "to": "ind_900", "width": 2}, {"arrows": "to", "color": "orange", "from": "ind_\u0423\u0441\u043b\u043e\u0432\u0438\u0435 \u043f\u0440\u043e\u0432\u0435\u0440\u043a\u0438 \u21161", "group": "edge_prop", "to": "prop_exist_5", "width": 2}, {"arrows": "to", "color": "orange", "from": "prop_exist_5", "group": "edge_prop", "to": "ind_\u0412\u0445\u043e\u0434\u043d\u0430\u044f \u0434\u0432\u0435\u0440\u044c", "width": 2}, {"arrows": "to", "color": "orange", "from": "ind_\u041f\u0440\u043e\u0432\u0435\u0440\u043a\u0430 \u21161", "group": "edge_prop", "to": "prop_check_6", "width": 2}, {"arrows": "to", "color": "orange", "from": "prop_check_6", "group": "edge_prop", "to": "ind_900", "width": 2}]);
 
                   nodeColors = {};
                   allNodes = nodes.get({ returnType: "Object" });
@@ -333,15 +365,15 @@ function highlightFilter(filter) {
         "hideNodesOnDrag": false
     },
     "physics": {
-        "barnesHut": {
-            "avoidOverlap": 0,
-            "centralGravity": 0.3,
-            "damping": 0.09,
-            "gravitationalConstant": -7000,
-            "springConstant": 0.001,
-            "springLength": 30
-        },
         "enabled": true,
+        "repulsion": {
+            "centralGravity": 0.1,
+            "damping": 0.09,
+            "nodeDistance": 300,
+            "springConstant": 0.05,
+            "springLength": 200
+        },
+        "solver": "repulsion",
         "stabilization": {
             "enabled": true,
             "fit": true,
@@ -373,5 +405,37 @@ function highlightFilter(filter) {
               }
               drawGraph();
         </script>
-    </body>
+    
+        <script>
+        function toggleGroup(groupName) {
+            let nodes = network.body.data.nodes.get();
+            let edges = network.body.data.edges.get();
+
+            nodes.forEach(n => {
+                if (n.group === groupName) {
+                    n.hidden = !n.hidden;
+                    network.body.data.nodes.update(n);
+                }
+            });
+
+            edges.forEach(e => {
+                if (e.group === "edge_" + groupName) {
+                    e.hidden = !e.hidden;
+                    network.body.data.edges.update(e);
+                }
+            });
+        }
+
+        network.once("stabilizationIterationsDone", function () {
+            network.fit({ animation: { duration: 1000, easingFunction: "easeInOutQuad" } });
+        });
+        </script>
+
+        <div class="layer-controls">
+        <button onclick="toggleGroup('class')">Toggle Classes</button>
+        <button onclick="toggleGroup('individual')">Toggle Individuals</button>
+        <button onclick="toggleGroup('property')">Toggle Properties</button>
+        </div>
+        
+</body>
 </html>

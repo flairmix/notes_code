@@ -1,0 +1,91 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://example.org/ontology"
+         xmlns="http://example.org/ontology#">
+
+<owl:Ontology rdf:about="http://example.org/ontology"/>
+
+<owl:ObjectProperty rdf:about="#hasPart">
+  <rdfs:domain rdf:resource="#Apartment"/>
+  <rdfs:range rdf:resource="#Door"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#property">
+  <rdfs:domain rdf:resource="#Door_leaf"/>
+  <rdfs:range rdf:resource="#Width"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#value">
+  <rdfs:domain rdf:resource="#Width"/>
+  <rdfs:range rdf:resource="#Millimeter"/>
+</owl:ObjectProperty>
+
+<owl:Class rdf:about="#Component">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Property">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Units">
+  <rdfs:subClassOf rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Apartment">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Door">
+  <rdfs:subClassOf rdf:resource="#Component"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Door_leaf">
+  <rdfs:subClassOf rdf:resource="#Door"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Width">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Height">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Distance">
+  <rdfs:subClassOf rdf:resource="#Property"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Millimeter">
+  <rdfs:subClassOf rdf:resource="#Units"/>
+</owl:Class>
+
+<owl:NamedIndividual rdf:about="#Тип квартиры №1">
+  <rdf:type rdf:resource="#Apartment"/>
+  <hasPart rdf:resource="#Входная дверь"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Входная дверь">
+  <rdf:type rdf:resource="#Door"/>
+  <hasPart rdf:resource="#Полотно входной двери 1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Полотно входной двери 1">
+  <rdf:type rdf:resource="#Door_leaf"/>
+  <property rdf:resource="#Ширина 1"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#Ширина 1">
+  <rdf:type rdf:resource="#Width"/>
+  <value rdf:resource="#900"/>
+</owl:NamedIndividual>
+
+<owl:NamedIndividual rdf:about="#900">
+  <rdf:type rdf:resource="#Millimeter"/>
+</owl:NamedIndividual>
+
+
+</rdf:RDF>
