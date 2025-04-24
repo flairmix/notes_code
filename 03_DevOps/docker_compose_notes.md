@@ -82,3 +82,6 @@ Check docker used space
 docker builder prune -a
 ```
 
+```bash
+sudo docker builder prune -f && sudo docker compose up --build --force-recreate --no-deps --no-cache -d
+```
