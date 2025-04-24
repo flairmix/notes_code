@@ -72,3 +72,13 @@ force recreate container
 ```bash
 sudo docker compose up --build --force-recreate --no-deps -d <container_name>
 ```
+
+Check docker used space
+```bash
+ docker system df
+```
+Чтобы удалить build cache (кэш сборки) Docker, используйте следующую команду:
+```bash
+docker builder prune -a
+```
+
