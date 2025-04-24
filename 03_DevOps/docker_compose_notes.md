@@ -85,3 +85,11 @@ docker builder prune -a
 ```bash
 sudo docker builder prune -f && sudo docker compose up --build --force-recreate --no-deps --no-cache -d
 ```
+
+## work inside docker with service port 
+```bash
+ docker compose down
+docker compose run --service-ports frontend sh
+```
+
+
